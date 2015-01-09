@@ -1,4 +1,4 @@
-﻿namespace DD.CBU.Compute.Api.Contracts.Billing
+﻿namespace DD.CBU.Compute.Api.Contracts.Vendor
 {
     using System;
     using System.CodeDom.Compiler;

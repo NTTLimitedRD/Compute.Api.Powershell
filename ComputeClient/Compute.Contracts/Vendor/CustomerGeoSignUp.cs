@@ -1,11 +1,11 @@
-﻿namespace DD.CBU.Compute.Api.Contracts.Provisioning
-{
-    using System;
-    using System.CodeDom.Compiler;
-    using System.ComponentModel;
-    using System.Diagnostics;
-    using System.Xml.Serialization;
+﻿using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Xml.Serialization;
 
+namespace DD.CBU.Compute.Api.Contracts.Vendor
+{
     /// <summary>
     /// A new customer to sign up
     /// </summary>
