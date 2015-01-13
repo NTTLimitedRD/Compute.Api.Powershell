@@ -189,7 +189,7 @@ namespace DD.CBU.Compute.Powershell
 
 
 
-                var status = CaaS.ApiClient.ProvisionCustomer(CaaS.Account.OrganizationId, customer).Result;
+                var status = Connection.ApiClient.ProvisionCustomer(Connection.Account.OrganizationId, customer).Result;
                 if (status != null)
                 {
 
@@ -216,11 +216,11 @@ namespace DD.CBU.Compute.Powershell
                     {
                         if (e is ComputeApiException)
                         {
-                            WriteError(new ErrorRecord(e, "-2", ErrorCategory.InvalidOperation, CaaS));
+                            WriteError(new ErrorRecord(e, "-2", ErrorCategory.InvalidOperation, Connection));
                         }
                         else //if (e is HttpRequestException)
                         {
-                            ThrowTerminatingError(new ErrorRecord(e, "-1", ErrorCategory.ConnectionError, CaaS));
+                            ThrowTerminatingError(new ErrorRecord(e, "-1", ErrorCategory.ConnectionError, Connection));
                         }
                         return true;
                     });
