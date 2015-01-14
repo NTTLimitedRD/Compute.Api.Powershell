@@ -13,7 +13,7 @@ namespace DD.CBU.Compute.Powershell
     /// <summary>
     /// Creates a new Tenant on Caas. It returns the customer ID 
     /// </summary>
-    [Cmdlet("Suspend", "CaasVendorCustomer")]
+    [Cmdlet(VerbsLifecycle.Suspend, "CaasVendorCustomer")]
     [OutputType(typeof(Guid))]
     public class SuspendCaasVendorCustomerCmdlet:PsCmdletCaasVendorBase
     {

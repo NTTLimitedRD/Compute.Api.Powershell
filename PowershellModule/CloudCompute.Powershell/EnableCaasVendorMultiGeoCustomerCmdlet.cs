@@ -12,7 +12,7 @@ namespace DD.CBU.Compute.Powershell
      /// <summary>
      /// Enable a customer to another region
      /// </summary>
-    [Cmdlet("Enable", "CaasVendorMultiGeoCustomer")]
+    [Cmdlet(VerbsLifecycle.Enable, "CaasVendorMultiGeoCustomer")]
     public class EnableCaasVendorMultiGeoCustomerCmdlet:PsCmdletCaasVendorBase
     {
         /// <summary>

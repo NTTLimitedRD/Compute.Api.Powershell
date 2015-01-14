@@ -13,9 +13,9 @@ namespace DD.CBU.Compute.Powershell
     /// <summary>
     /// Creates a new Tenant on Caas. It returns the customer ID 
     /// </summary>
-    [Cmdlet("Unsuspend", "CaasVendorCustomer")]
+    [Cmdlet(VerbsCommon.Remove, "CaasVendorCustomer")]
     [OutputType(typeof(Guid))]
-    public class UnsuspendCaasVendorCustomerCmdlet:PsCmdletCaasVendorBase
+    public class RemoveCaasVendorCustomerCmdlet:PsCmdletCaasVendorBase
     {
 
         /// <summary>
@@ -25,27 +25,6 @@ namespace DD.CBU.Compute.Powershell
         public string CustomerId { get; set; }
 
        
-        /// <summary>
-        /// Primary administrator new password.
-        /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "Primary administrator new password.")]
-        public SecureString NewPassword { get; set; }
-
-        /// <summary>
-        /// When cascadePassword is set to “true”, the new password value is also assigned to all SubAdministrators.
-        /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = "When cascadePassword is set to “true”, the new password value is also assigned to all SubAdministrators.")]
-        public bool CascadePassword { get; set; }
-
-
-        /// <summary>
-        //The shutAce parameter is used to tell the system whether or not to re-enable the public interfaces
-        //on the networks still assigned to the customer
-        /// </summary>
-        [Parameter(Mandatory = true, HelpMessage = @"The shutAce parameter is used to tell the system whether or not to re-enable the public interfaces on the networks still assigned to the customer")]
-
-        public bool ShutdownAce { get; set; }
-
 
         protected override void ProcessRecord()
         {
@@ -54,8 +33,7 @@ namespace DD.CBU.Compute.Powershell
             {
                   var customerGuid = Guid.Parse(CustomerId);
                 var status =
-                    Connection.ApiClient.UnsuspendCustomer(customerGuid, NewPassword.ToPlainString(), CascadePassword,
-                        ShutdownAce).Result;
+                    Connection.ApiClient.CancelCustomer(customerGuid).Result;
 
                 if (status != null)
                     WriteDebug(

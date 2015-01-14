@@ -12,16 +12,16 @@ namespace DD.CBU.Compute.Powershell
 {
 
     /// <summary>
-    /// The get CaaS ACL Rules cmdlet.
+    /// Finds a Caas account
     /// </summary>
-    [Cmdlet("Exist", "CaasVendorAccount")]
+    [Cmdlet(VerbsCommon.Find, "CaasVendorAccount")]
     [OutputType(typeof(bool))]
-    public class ExistCaasVendorAccountCmdlet:PsCmdletCaasVendorBase
+    public class FindCaasVendorAccountCmdlet:PsCmdletCaasVendorBase
     {
         /// <summary>
         /// Filter Caas Customer list
         /// </summary>
-        [Parameter(Mandatory = true, Position = 0, HelpMessage = "username to check")]
+        [Parameter(Mandatory = true, Position = 0, HelpMessage = "username to find")]
         public string Username { get; set; }
 
 
