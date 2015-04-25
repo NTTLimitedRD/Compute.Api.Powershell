@@ -6,7 +6,6 @@
 //   This base Cmdlet is used for Vendor only cmdlets
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace DD.CBU.Compute.Powershell
 {
 	/// <summary>
