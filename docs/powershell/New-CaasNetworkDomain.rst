@@ -8,7 +8,7 @@ Synopsis
 .. code-block:: powershell
     
     
-New-CaasNetworkDomain -Location <string> -Name <string> -Type <NetworkDomainServiceType> [-Description <string>] [-Connection <ComputeServiceConnection>] [<CommonParameters>]
+New-CaasNetworkDomain -Location <string> -Name <string> -Type <NetworkDomainServiceType> [-Description <string>] [-Wait] [-Connection <ComputeServiceConnection>] [<CommonParameters>]
 
 
 
@@ -89,6 +89,21 @@ The  Network Domain name
 ~~~~~~~~~
 
 The Network Domain Type
+
+* Position?                    Named
+* Accept pipeline input?       false
+* Parameter set name           (All)
+* Aliases                      None
+* Dynamic?                     false
+
+
+
+
+
+-Wait <switch>
+~~~~~~~~~
+
+Wait until provisioned before returning
 
 * Position?                    Named
 * Accept pipeline input?       false
